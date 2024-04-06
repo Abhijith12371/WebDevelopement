@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Create Database",
+        "description": "Command to create a database.",
+        "syntax": "use database_name",
+        "example": "use student"
+    },
+    {
+        "name": "Drop Database",
+        "description": "Command to drop a database.",
+        "syntax": "db.dropDatabase()",
+        "example": "db.dropDatabase()"
+    },
+    {
+        "name": "Current Database",
+        "description": "Command to know the current database.",
+        "syntax": "db",
+        "example":"db"
+    },
+    {
+        "name": "Create Collection",
+        "description": "Command to create a collection in a database.",
+        "syntax": "db.createCollection(\"collection_name\")",
+        "example": "db.createCollection(\"students\")"
+    },
+    {
+        "name": "Insert One Row",
+        "description": "Command to insert one row in a database.",
+        "syntax": "db.collection_name.insertOne({\"field_name\":\"value\"})",
+        "example": "db.students.insertOne({\"name\":\"John\", \"age\": 25})"
+    },
+    {
+        "name": "Insert Many Rows",
+        "description": "Command to insert many rows in a database.",
+        "syntax": "db.collection_name.insertMany([{},{},...,{\"field_name\":\"value\"}])",
+        "example": "db.students.insertMany([{},{},..., {\"name\":\"Alice\", \"age\": 30}])"
+    },
+    {
+        "name": "Drop Collection",
+        "description": "Command to drop a collection in a database.",
+        "syntax": "db.collection_name.drop()",
+        "example": "db.students.drop()"
+    },
+    {
+        "name": "Update Data",
+        "description": "Command to update data in a collection.",
+        "syntax": "db.collection_name.updateOne({field_name:value},{$set:{field_name:new_value}}) / db.collection_name.updateMany({field_name:value},{$set:{field_name:new_value}},{field_name:value},{$set:{field_name:new_value}},{multi:true})",
+        "example": "db.students.updateOne({\"name\":\"John\"}, {$set: {\"age\": 26}})"
+    },
+    {
+        "name": "Find Rows",
+        "description": "Command to find or show all rows in a collection.",
+        "syntax": "db.collection_name.find()",
+        "example": "db.students.find()"
+    },
+    {
+        "name": "Find Specific Row",
+        "description": "Command to find or show a particular row in a collection based on a condition.",
+        "syntax": "db.collection_name.find({field_name:value})",
+        "example": "db.students.find({\"name\":\"John\"})"
+    },
+    {
+        "name": "Limit Number of Rows",
+        "description": "Command to limit the number of rows to show in a collection.",
+        "syntax": "db.collection_name.find().limit(limit)",
+        "example": "db.students.find().limit(10)"
+    },
+    {
+        "name": "Delete Row",
+        "description": "Command to delete one row from a collection based on a condition.",
+        "syntax": "db.collection_name.deleteOne({field_name:value})",
+        "example": "db.students.deleteOne({\"name\":\"John\"})"
+    },
+    {
+        "name": "Delete Many Rows",
+        "description": "Command to delete many rows from a collection based on a condition.",
+        "syntax": "db.collection_name.deleteMany([{},{},...,{field_name:value}])",
+        "example": "db.students.deleteMany([{},{},..., {\"age\": {$gte: 30}}])"
+    },
+    {
+        "name": "Convert to JSON Format",
+        "description": "Command to convert the table or array of objects into JSON format.",
+        "syntax": "db.collection_name.find().forEach(printjson)",
+        "example": "db.students.find().forEach(printjson)"
+    },
+    {
+        "name": "Find Fields Based on Conditions",
+        "description": "Command to find fields based on specified conditions such as greater than, less than, etc.",
+        "syntax": "db.collection_name.find({field_name:{$gt, $lt, $ne, $gte, $lte:value}})",
+        "example": "db.students.find({\"age\": {$gte: 25}})"
+    }
+]

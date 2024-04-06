@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: black; */
+    background: black;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 370px;
+    height: 450px;
+    background: #1c1c1c;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.container::before,
+.container::after {
+    content: '';
+    top: -50%;
+    left: -50%;
+    width: 370px;
+    height: 450px;
+    background: linear-gradient(60deg,rgba(255, 255, 255, 0),#45ffb8,#45f3ff);
+    transform-origin: bottom right;
+    position: absolute;
+    animation: rotateBorder 6s linear infinite;
+}
+
+.container::after {
+    background: linear-gradient(60deg,rgba(255, 255, 255, 0),#45ffda,#ff7745);
+    animation-delay: -3s;
+}
+
+.box {
+    position: absolute;
+    inset: 2px;
+    border-radius: 6px;
+    background: #28292d;
+    z-index: 10;
+}
+
+@keyframes rotateBorder {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.container img {
+    position: relative;
+    clip-path: circle();
+    height: 200px;
+    width: 200px;
+    z-index: 30;
+    margin: auto;
+}
+
+a {
+    display: block;
+    width: 200px;
+    z-index: 40;
+    margin-top: 24px; 
+    margin-bottom:30px ;
+    padding: 12px;
+    cursor: pointer;
+    background: linear-gradient(green,lightgreen,rgba(255, 255, 255, 0));
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: bolder;
+    z-index: 150;
+}
+a:hover{
+    background: green;
+    box-shadow: 0px 0px 20px 6px white;;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+        </div>    
+        <img src="ABHI.jpg" alt="">
+        <a href="main/index.html">Login</a>
+    </div>
+</body>
+</html>
